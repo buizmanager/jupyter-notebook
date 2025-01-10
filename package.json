@@ -20,7 +20,7 @@
     ]
   },
   "scripts": {
-    "build": "lerna run build",
+    "build": "lerna run build && jupyter-notebook build",
     "build:lib": "lerna run build:lib",
     "build:prod": "lerna run build:prod --skip-nx-cache",
     "build:test": "lerna run build:test",
@@ -38,6 +38,8 @@
     "prettier:files": "prettier --write",
     "release:bump": "node ./buildutils/lib/release-bump.js",
     "release:patch": "node ./buildutils/lib/release-patch.js",
+    "start": "jupyter-notebook",
+    "dev": "jupyter-notebook --debug",
     "test": "lerna run test",
     "update:dependency": "node ./node_modules/@jupyterlab/buildutils/lib/update-dependency.js --lerna",
     "upgrade:lab:dependencies": "node ./buildutils/lib/upgrade-lab-dependencies.js",
@@ -68,3 +70,4 @@
   },
   "nx": {}
 }
+
