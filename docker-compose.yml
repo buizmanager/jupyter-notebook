@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  jupyter_notebook:
+    build:
+      context: ./notebook
+    ports:
+      - "8888:8888"
+    volumes:
+      - notebook_data:/app/notebook    
+      - node_modules:/app/node_modules
+    environment:
+      JUPYTER_TOKEN: "your_secure_token"  
+    restart: unless-stopped
+
+volumes:
+  notebook_data:
+  node_modules:
+
+
